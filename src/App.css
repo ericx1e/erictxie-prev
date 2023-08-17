@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+/* App.css */
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #222;
+    /* Darker background */
+    color: white;
+    /* White text color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button {
+    background-color: #222 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    background-color: #111 !important;
+    /* Slightly lighter grey */
+    height: 3rem;
+    /* Set a fixed height */
+    padding: 0.5rem !important;
+    /* Important to override Bulma's padding */
+    text-align: center;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    /* Vertically center the text */
+    justify-content: center;
+    /* Horizontally center the text */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* Vertically center the content */
+    justify-content: center;
+    /* Horizontally center the content */
 }
 
-.App-link {
-  color: #61dafb;
+.middle-section {
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.middle-section h2,
+.middle-section p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer {
+    background-color: #111 !important;
+    /* Slightly lighter grey */
+    height: 3rem;
+    /* Set a fixed height */
+    padding: 0.5rem !important;
+    /* Important to override Bulma's padding */
+    text-align: center;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    /* Vertically center the text */
+    justify-content: center;
+    /* Horizontally center the text */
+}
+
+.animation-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cell {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #0074d9;
+    /* Cell background color */
+    border-radius: 50%;
+    pointer-events: none;
+    /* Prevent interaction with cells */
+}
+
+/* Optional: Add animation effects */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.cell {
+    animation: bounce 2s infinite;
 }
