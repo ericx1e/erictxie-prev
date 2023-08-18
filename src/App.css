@@ -1,9 +1,25 @@
 /* App.css */
 
+/* CSS reset */
+
+/* * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+} */
+
+html {
+    overflow-y: hidden !important;
+}
+
 .app {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #222;
     /* Darker background */
     color: white;
@@ -14,20 +30,39 @@
     background-color: #222 !important;
 }
 
+.button.is-focused,
+.button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.title {
+    font-size: 14rem !important;
+}
+
+
 .header {
     background-color: #111 !important;
     /* Slightly lighter grey */
     height: 3rem;
     /* Set a fixed height */
     padding: 0.5rem !important;
+    margin: 0 !important;
     /* Important to override Bulma's padding */
     text-align: center;
     font-size: small;
     display: flex;
     align-items: center;
+    z-index: 1;
     /* Vertically center the text */
-    justify-content: center;
+    /* justify-content: center; */
     /* Horizontally center the text */
+}
+
+.header-content {
+    width: 100%;
+    padding: 1rem;
+    /* Add padding for spacing */
 }
 
 .main {
@@ -51,11 +86,13 @@
 }
 
 .footer {
+    z-index: 1;
     background-color: #111 !important;
     /* Slightly lighter grey */
     height: 3rem;
     /* Set a fixed height */
     padding: 0.5rem !important;
+    margin: 0 !important;
     /* Important to override Bulma's padding */
     text-align: center;
     font-size: small;
@@ -66,11 +103,16 @@
     /* Horizontally center the text */
 }
 
-.animation-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+.footer-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-icon:hover {
+    color: #222;
 }
 
 .cell {
@@ -82,19 +124,6 @@
     border-radius: 50%;
     pointer-events: none;
     /* Prevent interaction with cells */
-}
-
-/* Optional: Add animation effects */
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
 }
 
 .cell {

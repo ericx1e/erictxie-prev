@@ -1,46 +1,84 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'bulma/css/bulma.min.css';
+// import 'bulma/css/bulma.min.css';
 import './App.css';
 import BouncingCells from './components/BouncingCells'; // Import the BouncingCells component
-
-
+import Projects from './components/Projects';
+import MainPage from './components/MainPage';
 function App() {
     return (
         <div className="app">
-            <header className="header">
-                <div className="container is-flex is-justify-content-space-between is-align-items-center">
-                    <div>
-                        <p className="has-text-white">Eric Xie</p>
+            <Router>
+                <header className="header">
+                    <div className="header-content">
+                        <div className="is-flex is-justify-content-space-between is-align-items-center">
+                            <div>
+                                <Link
+                                    to="/"
+                                    className="button is-small is-outlined has-text-white"
+                                    style={{ marginRight: '10px' }}
+                                >
+                                    <span className="icon">
+                                        <i className="fas fa-e"></i>
+                                    </span>
+                                    <span>Eric Xie</span>
+                                </Link>
+                            </div>
+                            <div className="header-buttons"> {/* New container for buttons */}
+                                <a
+                                    href="https://github.com/ericx1e"
+                                    className="button is-small is-outlined has-text-white"
+                                    style={{ marginRight: '10px' }}
+                                >
+                                    <span className="icon">
+                                        <i className="fab fa-github"></i>
+                                    </span>
+                                    <span>GitHub</span>
+                                </a>
+                                <Link
+                                    to="/projects"
+                                    className="button is-small is-outlined has-text-white"
+                                    style={{ marginRight: '10px' }}
+                                >
+                                    <span className="icon">
+                                        <i className="fas fa-laptop-code"></i>
+                                    </span>
+                                    <span>Projects</span>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <a
-                            href="https://github.com/yourusername"
-                            className="button is-small is-outlined has-text-white"
-                        >
-                            <span className="icon">
-                                <i className="fab fa-github"></i>
-                            </span>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
-                </div>
-            </header>
+                </header>
 
-            <main className="main">
-                <div className="middle-section">
-                    <div className="container has-text-centered">
-                        <BouncingCells />
-                        <h2 className="title">Eric Xie</h2>
-                        <br></br>
-                        <p>This is a sample big text section in the middle of the website.</p>
+                <main className="main">
+                    <div className="middle-section">
+                        <Routes>
+                            <Route path="/" element={<MainPage />} />
+                            <Route path="/projects" element={<Projects />} />
+                        </Routes>
                     </div>
-                </div>
-            </main>
+                </main>
 
-            <footer className="footer has-text-light">
-                <p>&copy; 2023 Your Website. All rights reserved.</p>
-            </footer>
+                <footer className="footer has-text-light">
+                    <div className="container">
+                        <div className="is-flex is-justify-content-center">
+                            <a href="mailto:youremail@example.com" className="footer-icon">
+                                <i className="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.instagram.com/yourinstagram/" className="footer-icon">
+                                <i className="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yourlinkedin/" className="footer-icon">
+                                <i className="fab fa-linkedin"></i>
+                            </a>
+                            <a href="/your-resume.pdf" className="footer-icon">
+                                <i className="fas fa-file-pdf"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </Router>
         </div>
     );
 }

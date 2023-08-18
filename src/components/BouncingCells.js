@@ -1,56 +1,81 @@
 // BouncingCells.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import './BouncingCells.css';
+import CellLines from './CellLines'; // Import the CellLines component
 
-const BouncingCells = () => {
-    const numCells = 10;
-    const maxVelocity = 2;
+function BouncingCells() {
+    const numberOfCells = 150;
+    const cellSize = 10;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    const [cells, setCells] = useState(Array.from({ length: numberOfCells }, () => ({
+        x: Math.random() * screenWidth,
+        y: Math.random() * screenHeight,
+        speedX: (Math.random() - 0.5) * 2, // Random speed in X direction
+        speedY: (Math.random() - 0.5) * 2, // Random speed in Y direction
+    })));
 
     useEffect(() => {
-        const animationContainer = document.getElementById("animation-container");
+        const moveCells = () => {
+            setCells(prevCells =>
+                prevCells.map(cell => {
+                    const newX = cell.x + cell.speedX;
+                    const newY = cell.y + cell.speedY;
 
-        const createCell = () => {
-            const cell = document.createElement("div");
-            cell.classList.add("cell");
-            animationContainer.appendChild(cell);
+                    return {
+                        ...cell,
+                        x: newX >= screenWidth + cellSize ? newX - screenWidth : newX < -cellSize ? newX + screenWidth : newX,
+                        y: newY >= screenHeight + cellSize ? newY - screenHeight : newY < -cellSize ? newY + screenHeight : newY,
+                    };
+                })
+            );
 
-            const position = {
-                x: Math.random() * animationContainer.offsetWidth,
-                y: Math.random() * animationContainer.offsetHeight,
-            };
-
-            const velocity = {
-                x: (Math.random() - 0.5) * maxVelocity,
-                y: (Math.random() - 0.5) * maxVelocity,
-            };
-
-            const updatePosition = () => {
-                position.x += velocity.x;
-                position.y += velocity.y;
-
-                if (position.x <= 0 || position.x >= animationContainer.offsetWidth) {
-                    velocity.x *= -1;
-                }
-
-                if (position.y <= 0 || position.y >= animationContainer.offsetHeight) {
-                    velocity.y *= -1;
-                }
-
-                cell.style.transform = `translate(${position.x}px, ${position.y}px)`;
-                requestAnimationFrame(updatePosition);
-            };
-
-            requestAnimationFrame(updatePosition);
+            requestAnimationFrame(moveCells);
         };
 
-        for (let i = 0; i < numCells; i++) {
-            createCell();
-        }
+        requestAnimationFrame(moveCells);
+
+        return () => cancelAnimationFrame(moveCells);
     }, []);
 
+    const getAttachedCells = () => {
+        const attachedCells = [];
+
+        for (let i = 0; i < cells.length; i++) {
+            for (let j = i + 1; j < cells.length; j++) {
+                const dx = cells[i].x - cells[j].x;
+                const dy = cells[i].y - cells[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    attachedCells.push([i, j]);
+                }
+            }
+        }
+
+        return attachedCells;
+    };
+
+    const attachedCells = getAttachedCells();
+
     return (
-        <div className="animation-container" id="animation-container">
+        <div className="bouncing-cells">
+            {attachedCells.length > 0 && <CellLines attachedCells={attachedCells} cells={cells} cellSize={cellSize} />}
+            {cells.map((cell, index) => (
+                <div
+                    className="cell"
+                    key={index}
+                    style={{
+                        left: `${cell.x}px`,
+                        top: `${cell.y}px`,
+                        width: `${cellSize}px`,
+                        height: `${cellSize}px`,
+                    }}
+                />
+            ))}
         </div>
     );
-};
+}
 
 export default BouncingCells;
