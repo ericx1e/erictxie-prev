@@ -4,11 +4,11 @@ import './BouncingCells.css';
 import CellLines from './CellLines'; // Import the CellLines component
 
 function BouncingCells() {
-    const numberOfCells = 150;
     const cellSize = 7;
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    const speed = 1.5;
+    const numberOfCells = (screenWidth + screenHeight) / 15;
+    const speed = cellSize / 4;
 
     const [cells, setCells] = useState(Array.from({ length: numberOfCells }, () => ({
         x: Math.random() * screenWidth,
