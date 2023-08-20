@@ -5,15 +5,16 @@ import CellLines from './CellLines'; // Import the CellLines component
 
 function BouncingCells() {
     const numberOfCells = 150;
-    const cellSize = 10;
+    const cellSize = 7;
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
+    const speed = 1.5;
 
     const [cells, setCells] = useState(Array.from({ length: numberOfCells }, () => ({
         x: Math.random() * screenWidth,
         y: Math.random() * screenHeight,
-        speedX: (Math.random() - 0.5) * 2, // Random speed in X direction
-        speedY: (Math.random() - 0.5) * 2, // Random speed in Y direction
+        speedX: (Math.random() - 0.5) * speed, // Random speed in X direction
+        speedY: (Math.random() - 0.5) * speed, // Random speed in Y direction
     })));
 
     useEffect(() => {
@@ -49,7 +50,7 @@ function BouncingCells() {
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < 100) {
-                    attachedCells.push([i, j]);
+                    attachedCells.push([i, j, distance]);
                 }
             }
         }

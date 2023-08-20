@@ -33,9 +33,7 @@
     /* Prevent interaction with lines */
 }
 
-.cell-lines line {
+/* .cell-lines line {
     stroke: #777;
-    /* Line color */
     stroke-width: 1px;
-    /* Line width */
-}
+} */

@@ -38,6 +38,7 @@ html {
 
 .title {
     font-size: 14rem !important;
+    text-shadow: 5px 5px #0000005e;
 }
 
 
@@ -57,6 +58,7 @@ html {
     /* Vertically center the text */
     /* justify-content: center; */
     /* Horizontally center the text */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
@@ -101,6 +103,7 @@ html {
     /* Vertically center the text */
     justify-content: center;
     /* Horizontally center the text */
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -112,7 +115,7 @@ html {
 }
 
 .footer-icon:hover {
-    color: #222;
+    color: #777;
 }
 
 .cell {

@@ -30,6 +30,7 @@ function App() {
                                     href="https://github.com/ericx1e"
                                     className="button is-small is-outlined has-text-white"
                                     style={{ marginRight: '10px' }}
+                                    target="_blank"
                                 >
                                     <span className="icon">
                                         <i className="fab fa-github"></i>
@@ -56,6 +57,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<MainPage />} />
                             <Route path="/projects" element={<Projects />} />
+                            <Route path="/projects" element={<Projects />} />
                         </Routes>
                     </div>
                 </main>
@@ -63,16 +65,17 @@ function App() {
                 <footer className="footer has-text-light">
                     <div className="container">
                         <div className="is-flex is-justify-content-center">
-                            <a href="mailto:youremail@example.com" className="footer-icon">
+                            <a href="mailto:youremail@example.com" className="footer-icon" target="_blank">
                                 <i className="fas fa-envelope"></i>
                             </a>
-                            <a href="https://www.instagram.com/yourinstagram/" className="footer-icon">
+                            <a href="https://www.instagram.com/erictxie/" className="footer-icon" target="_blank">
                                 <i className="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/yourlinkedin/" className="footer-icon">
+                            <a href="https://www.linkedin.com/in/eric-xie-895a671aa/" className="footer-icon" target="_blank">
                                 <i className="fab fa-linkedin"></i>
                             </a>
-                            <a href="/your-resume.pdf" className="footer-icon">
+                            <a href="/EricXieResume.pdf" className="footer-icon"
+                                target="_blank">
                                 <i className="fas fa-file-pdf"></i>
                             </a>
                         </div>
