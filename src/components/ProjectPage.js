@@ -34,6 +34,12 @@ const ProjectPage = () => {
             imageUrl: '/images/3body.png',
             projectLink: 'https://ericxie.itch.io/3body',
         },
+        {
+            title: 'Primes',
+            description: 'Description for Project 1',
+            imageUrl: '/images/primes.png',
+            projectLink: 'https://primebord.com',
+        },
     ];
 
     return (

@@ -46,6 +46,16 @@ function App() {
                                     </span>
                                     <span>Projects</span>
                                 </Link>
+                                <Link
+                                    to="/about"
+                                    className="button is-small is-outlined has-text-white"
+                                    style={{ marginRight: '10px' }}
+                                >
+                                    <span className="icon">
+                                        <i className="fas fa-question"></i>
+                                    </span>
+                                    <span>About</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
