@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import 'bulma/css/bulma.min.css';
 import './App.css';
-import BouncingCells from './components/BouncingCells'; // Import the BouncingCells component
-import Projects from './components/Projects';
+import ProjectPage from './components/ProjectPage';
 import MainPage from './components/MainPage';
 function App() {
     return (
@@ -56,8 +55,8 @@ function App() {
                     <div className="middle-section">
                         <Routes>
                             <Route path="/" element={<MainPage />} />
-                            <Route path="/projects" element={<Projects />} />
-                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/projects" element={<ProjectPage />} />
+                            <Route path="/projects" element={<ProjectPage />} />
                         </Routes>
                     </div>
                 </main>

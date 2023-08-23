@@ -1,0 +1,46 @@
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    padding-top: 8px;
+    margin: 16px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    max-width: 100%;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.project-card h2 {
+    font-size: 2em;
+}
+
+.project-card p {
+    font-size: 1em;
+}
+
+.project-card a {
+    display: block;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 16px;
+    margin: 8px auto;
+    border-radius: 4px;
+}
+
+.project-card a:hover {
+    background-color: #555;
+}

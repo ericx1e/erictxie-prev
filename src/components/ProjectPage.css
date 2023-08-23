@@ -1,0 +1,13 @@
+.project-card-container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Create as many columns as possible with a minimum width of 300px */
+    gap: 20px;
+    /* Adjust the gap between cards */
+}
+
+.project-card {
+    margin: 10px;
+    padding: 10px;
+}
