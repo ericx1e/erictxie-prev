@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import 'bulma/css/bulma.min.css';
 import './App.css';
-import ProjectPage from './components/ProjectPage';
 import MainPage from './components/MainPage';
+import ProjectPage from './components/ProjectPage';
+import AboutPage from './components/AboutPage';
+import BlogPage from './components/BlogPage';
+
 function App() {
     return (
         <div className="app">
@@ -47,6 +50,16 @@ function App() {
                                     <span>Projects</span>
                                 </Link>
                                 <Link
+                                    to="/blog"
+                                    className="button is-small is-outlined has-text-white"
+                                    style={{ marginRight: '10px' }}
+                                >
+                                    <span className="icon">
+                                        <i className="fas fa-newspaper"></i>
+                                    </span>
+                                    <span>Blog</span>
+                                </Link>
+                                <Link
                                     to="/about"
                                     className="button is-small is-outlined has-text-white"
                                     style={{ marginRight: '10px' }}
@@ -66,7 +79,8 @@ function App() {
                         <Routes>
                             <Route path="/" element={<MainPage />} />
                             <Route path="/projects" element={<ProjectPage />} />
-                            <Route path="/projects" element={<ProjectPage />} />
+                            <Route path="/blog" element={<BlogPage />} />
+                            <Route path="/about" element={<AboutPage />} />
                         </Routes>
                     </div>
                 </main>
