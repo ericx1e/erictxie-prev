@@ -13,7 +13,7 @@ function App() {
     const location = useLocation();
 
     return (
-        <div className="app">
+        <div className="app is-family-sans-serif">
             <header className="header">
                 <div className="header-content">
                     <div className="is-flex is-justify-content-space-between is-align-items-center">
@@ -24,7 +24,7 @@ function App() {
                                 style={{ marginRight: '10px' }}
                             >
                                 <span className="icon">
-                                    <i className="fas fa-e"></i>
+                                    <i className="fas fa-home"></i>
                                 </span>
                                 <span>Eric Xie</span>
                             </Link>
