@@ -8,7 +8,7 @@ function MainPage() {
             <div className="container has-text-centered">
                 <h1 className="title">Eric Xie</h1>
                 {/* <br />
-            <p>This is a sample big text section in the middle of the website.</p> */}
+            <p></p> */}
             </div>
         </div>
     )

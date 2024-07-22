@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { Route, Routes, Link, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import 'bulma/css/bulma.min.css';
@@ -51,7 +51,7 @@ function App() {
                                 </span>
                                 <span>Projects</span>
                             </Link>
-                            <Link
+                            {/* <Link
                                 to="/blog"
                                 className="button is-small is-outlined has-text-white"
                                 style={{ marginRight: '10px' }}
@@ -60,7 +60,7 @@ function App() {
                                     <i className="fas fa-newspaper"></i>
                                 </span>
                                 <span>Blog</span>
-                            </Link>
+                            </Link> */}
                             <Link
                                 to="/about"
                                 className="button is-small is-outlined has-text-white"
@@ -82,7 +82,7 @@ function App() {
                         <CSSTransition
                             key={location.key}
                             timeout={{ exit: 400, enter: 400 }}
-                            classNames="page" // Use the class names you defined
+                            classNames="page"
                         >
                             <Routes location={location}>
                                 <Route path="/" element={<MainPage />} />
@@ -98,7 +98,7 @@ function App() {
             <footer className="footer has-text-light">
                 <div className="container">
                     <div className="is-flex is-justify-content-center">
-                        <a href="mailto:youremail@example.com" className="footer-icon" target="_blank">
+                        <a href="mailto:ericxie6@gmail.com" className="footer-icon" target="_blank">
                             <i className="fas fa-envelope"></i>
                         </a>
                         <a href="https://www.instagram.com/erictxie/" className="footer-icon" target="_blank">
@@ -107,7 +107,7 @@ function App() {
                         <a href="https://www.linkedin.com/in/eric-xie-895a671aa/" className="footer-icon" target="_blank">
                             <i className="fab fa-linkedin"></i>
                         </a>
-                        <a href="/EricXieResume.pdf" className="footer-icon"
+                        <a href="/Eric_Xie_Resume.pdf" className="footer-icon"
                             target="_blank">
                             <i className="fas fa-file-pdf"></i>
                         </a>

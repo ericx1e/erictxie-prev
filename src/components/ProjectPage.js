@@ -17,6 +17,12 @@ const ProjectPage = () => {
             projectLink: 'https://studybrew.netlify.app/',
         },
         {
+            title: 'Learning Opt.',
+            description: 'Description for Project 1',
+            imageUrl: '/images/trainingdataselection.png',
+            projectLink: 'https://colab.research.google.com/drive/1ZrtsdGgVCqhoiYWFOSiuKyl5STq4pNUu',
+        },
+        {
             title: '24 Card Game',
             description: 'Description for Project 1',
             imageUrl: '/images/24thegame.png',
